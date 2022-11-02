@@ -1,0 +1,24 @@
+en
+conf t 
+vlan 10-20
+exit
+sp mo mst
+sp mst conf
+name III-MST_LAB
+rev 10
+inst 1 vlan 10-13
+inst 2 vlan 14-16
+inst 3 vlan 17-20
+exit 
+int ra e0/0-3
+swi trunk enc dot
+swi  mo trunk
+exit
+int ra e1/0-3
+swi trunk enc dot
+swi  mo trunk
+exit
+int ra e2/0-3
+swi trunk enc dot
+swi mo trunk
+exit 
